@@ -128,7 +128,7 @@ const loadLineData =  (svg, ratio, lineData,centerX,centerY) => {
         x2 = centerX - swapDeviceX(d.endX, d.endY)*ratio
         y1 = centerY - swapDeviceY(d.startX,d.startY) *ratio
         y2 = centerY- swapDeviceY(d.endX,d.endY)*ratio
-        let line = svg.append("g").append("line").attr('data-line-id',d.id)
+        let line = svg.append("g").append("line").attr('data-line-id',d.id).attr("class", "line")
         .attr('x1', x1)
         .attr('y1', y1)
         .attr('x2', x2)
@@ -182,7 +182,7 @@ const dragLine = (ratio,lineData,centerX,centerY) => {
         lineData[id].endX=translatePlayerPosition(centerX,centerY,ratio,x2,y2)[0]
         lineData[id].endY= translatePlayerPosition(centerX,centerY,ratio,x2,y2)[1]
         line.remove()
-        g.append("line").attr('data-line-id',d.id)
+        g.append("line").attr('data-line-id',id+1)
         .attr("x1", x1)
         .attr("y1", y1)
         .attr("x2", x2)

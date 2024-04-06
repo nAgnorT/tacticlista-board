@@ -25,6 +25,7 @@ const playerDraw = (svg,playerData, ratio,centerX,centerY) => {
             y: transY
            }
             playerData.push(playerPoint)
+
             player.append("circle")
               .attr("cx", baseX)
               .attr("cy", baseY)
@@ -91,12 +92,8 @@ const dragPlayer = (playerData,centerX,centerY,ratio) => {
 
   function dragged (event){
     
-    // if(isMobile()){
-    //   [newX, newY] = [event.clientX, event.clientY]
-    //   d3.select(this).attr("transform", `translate(${newX-baseX}, ${newY-baseY})`)
-    // } 
     [newX, newY] = [event.x, event.y]
-    d3.select(this).attr("transform", `translate(${newX - baseX}, ${newY - baseY})`)
+    // d3.select(this).attr("transform", `translate(${newX - baseX}, ${newY - baseY})`)
   }
 
   function dragEnded (event) {
